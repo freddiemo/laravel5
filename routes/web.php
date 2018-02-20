@@ -16,7 +16,11 @@
  * Show Task Dashboard
  */
 Route::get('/', function () {
-    return view('tasks');
+    $tasks = \App\Task::orderBy('created_at', 'asc')->get();
+
+    return view('tasks', [
+        'tasks' => $tasks
+    ]);
 });
 
 /**
