@@ -11,6 +11,23 @@
 |
 */
 
+/**
+ * Show Task Dashboard
+ */
 Route::get('/', function () {
-    return view('welcome');
+    //
+});
+
+/**
+ * Add New Task
+ */
+Route::post('/task', function (Request $request){
+    //
+});
+
+/**
+ * Delete Task
+ */
+Route::delete('/task/{task}', function (Task $task){
+    //
 });
