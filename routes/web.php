@@ -33,8 +33,10 @@ Route::post('/task', function (\Illuminate\Http\Request $request){
             ->withErrors($validator);
     }
 
-    $task = new Task;
+    $task = new \App\Task;
     $task->name = $request->name;
+    $task->save();
+
     return redirect('/');
 });
 
