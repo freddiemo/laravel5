@@ -7,15 +7,7 @@
     <!-- Boostrap Boilerplate ... -->
     <div clas="panel-body">
             <!-- Display Validation Errors -->
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
+            @include('common.errors')
 
             <!-- New Task Form -->
             <form action="{{ url('task') }}" method="POST" class="fomr-horizontal">
