@@ -65,7 +65,19 @@
                                     <div>{{ $task->name }}</div>
                                 </td>
                                 <td>
-                                    <!-- TODO: Delete Button -->
+                                    <!-- Delete Button -->
+                                    <form action="{{ url('task/'.task->id) }}"
+                                        method="POST">
+                                        {{ csrf_field() }}
+                                        {{ method_fild('DELETE') }}
+
+                                        <button type="submit"
+                                            id="delete-task-{{ $task->id }}"
+                                            class="btn btn-danger">
+                                            <i class="fa fa-btn fa-trash"></i>
+                                            Delete
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
