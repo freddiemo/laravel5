@@ -25,11 +25,7 @@ Route::post('/task', 'TaskController@store');
 /**
  * Delete Task
  */
-Route::delete('/task/{task}', function (\App\Task $task){
-    $task->delete();
-
-    return redirect('/');
-});
+Route::delete('/task/{task}', 'TaskController@destroy');
 
 Auth::routes();
 
