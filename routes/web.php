@@ -13,15 +13,9 @@
 */
 
 /**
- * Show Task Dashboard
+ * Get Tasks
  */
-Route::get('/', function () {
-    $tasks = \App\Task::orderBy('created_at', 'asc')->get();
-
-    return view('tasks', [
-        'tasks' => $tasks
-    ]);
-});
+Route::get('/tasks', 'TaskController@index');
 
 /**
  * Add New Task
