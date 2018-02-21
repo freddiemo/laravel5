@@ -26,23 +26,7 @@ Route::get('/', function () {
 /**
  * Add New Task
  */
-Route::post('/task', function (\Illuminate\Http\Request $request){
-    $validator = Validator::make($request->all(), [
-        'name' => 'required|max:255',
-    ]);
-
-    if ($validator->fails()){
-        return redirect('/')
-            ->withInput()
-            ->withErrors($validator);
-    }
-
-    $task = new \App\Task;
-    $task->name = $request->name;
-    $task->save();
-
-    return redirect('/');
-});
+Route::post('/task', 'TaskController@store');
 
 /**
  * Delete Task
