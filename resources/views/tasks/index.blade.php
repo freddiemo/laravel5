@@ -66,7 +66,7 @@
                                 </td>
                                 <td>
                                     <!-- Delete Button -->
-                                    <form action="{{ url('task/'.task->id) }}"
+                                    <form action="{{ url('task/'.$task->id) }}"
                                         method="POST">
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
